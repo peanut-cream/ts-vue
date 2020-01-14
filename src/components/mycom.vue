@@ -25,6 +25,14 @@ export default class mycom extends Vue {
         this.myage = Math.floor(Math.random() * 100);
         this.$emit('pass', this.myname + this.myage);
     }
+    getdata(): void {
+        this.$axios.get('/api/index.php').then((res: any) => {
+            console.log(res);
+        });
+    }
+    created() {
+        this.getdata();
+    }
 }
 </script>
 
